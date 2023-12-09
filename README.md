@@ -1,8 +1,8 @@
-# React + Vite
+# WatchList
+This a website that provide movies and series based on user's demand.
+The main features of the project are:
+*User can login or register via google or email
+*There are categories based on what user can find their desired movies.
+*There is option for add moives as well.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
