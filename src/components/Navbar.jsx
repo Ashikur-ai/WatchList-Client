@@ -4,19 +4,19 @@ import { AuthContext } from '../Provider/AuthProvider';
 import toast from 'react-hot-toast';
 
 import { BsMoon } from "react-icons/bs";
-const Navbar = ({dark, setDark}) => {
+const Navbar = ({ dark, setDark }) => {
 
     const { LogOut } = useContext(AuthContext);
 
     const navLinks = <>
-    
-        <li className={dark ? 'text-black' : 'text-white'}><Link className='hover:font-semibold hover:text-white' to="/">Home</Link></li>
+
+        {/* <li className={dark ? 'text-black' : 'text-white'}><Link className='hover:font-semibold hover:text-white' to="/">Home</Link></li>
         <li className={dark ? 'text-black' : 'text-white'}><Link className='hover:font-semibold hover:text-white' to="/addProduct">Add Movies</Link></li>
         <li className={dark ? 'text-black' : 'text-white'}>
             <Link className='hover:font-semibold hover:text-white' to="/cart">Cart</Link>
-        </li>
-        
-        
+        </li> */}
+
+
     </>
 
     const handleLogOut = () => {
@@ -30,7 +30,7 @@ const Navbar = ({dark, setDark}) => {
 
     return (
         <>
-            
+
             <div className="navbar text-white container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -42,10 +42,13 @@ const Navbar = ({dark, setDark}) => {
                         </ul>
                     </div>
                     <Link to="/">
-                        <button className='text-4xl font-bold '>
-                            <span className='text-red-700'>Watch</span>
-                            <span className={dark ? 'text-black' : 'text-white'}>List</span>
-                        </button>
+                        <div className="flex gap-3">
+                            <img src="https://res.cloudinary.com/dramj404v/image/upload/v1732639290/ARK%20Limited/ARK%20Technologies/WatchList/eho2iwtr7eeuhefzghrm.png" alt="" className='w-16' />
+                            <button className='text-4xl font-bold '>
+                                <span className='text-red-700'>Watch</span>
+                                <span className={dark ? 'text-black' : 'text-white'}>List</span>
+                            </button>
+                        </div>
                     </Link>
 
                 </div>
@@ -64,10 +67,10 @@ const Navbar = ({dark, setDark}) => {
                                         <label tabIndex={0} className="btn btn-ghost btn-circle bg-blue-800 avatar">
                                             <div className="w-10 rounded-full">
                                                 {
-                                                    user.photoURL ?
-                                                        <img src={`${user.photoURL}`} alt="" />
-                                                        :
+                                                    user ?
                                                         <div className='font-bold text-2xl text-white'>{user.email.slice(0, 1)}</div>
+                                                        :
+                                                        <></>
                                                 }
                                             </div>
                                         </label>
@@ -79,6 +82,7 @@ const Navbar = ({dark, setDark}) => {
                                                 </a>
                                             </li>
                                             <li onClick={handleLogOut}><a>Logout</a></li>
+                                            <li onClick={handleLogOut}><a>Dashboard</a></li>
                                         </ul>
                                     </div>
                                 </>
@@ -96,7 +100,7 @@ const Navbar = ({dark, setDark}) => {
                 </div>
             </div>
         </>
-        
+
 
 
     );

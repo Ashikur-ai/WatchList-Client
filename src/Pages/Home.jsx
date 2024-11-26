@@ -7,6 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
 
 const Home = () => {
+    window.scrollTo(0, 0);
     const movies = useLoaderData();
     const [dark, setDark] = useState(true);
     
@@ -28,9 +29,9 @@ const Home = () => {
             {/* latest movie  */}
             <p className='text-white my-4 text-3xl container mx-auto '><span className={dark ? 'text-black' : 'text-white'}>Latest Movies</span></p>
             <div className='container p-5 mx-auto text-white mt-6 grid grid-cols-2 md:grid-cols-4 gap-5'>
-                {
-                    movies.map(movie => <MovieCard key={movie._id} movie={movie}></MovieCard>)
-                }
+                {/* {
+                    movies?.map(movie => <MovieCard key={movie._id} movie={movie}></MovieCard>)
+                } */}
             </div>
             
            
